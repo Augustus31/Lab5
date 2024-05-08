@@ -35,6 +35,17 @@ function play(event){
   let utterance = new SpeechSynthesisUtterance(textar.value);
   utterance.voice = selectedVoice;
   synth.speak(utterance);
+  let stopper = window.setInterval(function(){
+    if(synth.speaking){
+      if(img.src == "assets/images/smiling.png"){
+        img.src = "assets/images/smiling-open.png"
+      }
+    }
+    else{
+      img.src = "assets/images/smiling.png"
+      clearInterval(stopper);
+    }
+  }, 200);
 }
 
 function drChange(event){
