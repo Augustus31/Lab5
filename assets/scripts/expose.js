@@ -3,6 +3,7 @@
 window.addEventListener('DOMContentLoaded', init);
 
 let horn = "none";
+const jsConfetti = new JSConfetti();
 
 function init() {
   let dropdown = document.getElementById("horn-select");
@@ -52,7 +53,6 @@ function play(event){
   let aud = document.querySelector("audio");
   aud.play();
   if(horn=="party-horn"){
-    const jsConfetti = new JSConfetti();
     jsConfetti.addConfetti({
       confettiRadius: 6,
     })
