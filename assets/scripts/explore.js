@@ -9,7 +9,6 @@ function init() {
   window.speechSynthesis.onvoiceschanged = function() {
     let voices = synth.getVoices();
     for(let i = 0; i < voices.length; i++){
-      console.log("yay")
       let voice = voices[i];
       let option = document.createElement("option");
       let optext = document.createTextNode(voice.name);
@@ -34,7 +33,6 @@ function play(event){
   let textar = document.getElementById("text-to-speak")
   let utterance = new SpeechSynthesisUtterance(textar.value);
   utterance.voice = selectedVoice;
-  synth.speak(utterance);
   let img = document.querySelector("img");
   img.src = "assets/images/smiling-open.png";
   let stopper = window.setInterval(function(){
@@ -43,6 +41,8 @@ function play(event){
       clearInterval(stopper);
     }
   }, 500);
+  synth.speak(utterance);
+  
 }
 
 function drChange(event){
