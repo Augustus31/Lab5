@@ -46,8 +46,8 @@ test('Is ordular_iN a strong pw', () => {
   expect(isStrongPassword("ordular_iN")).toBe(true);
 });
 
-test('Is pekcokZaman a strong pw', () => {
-  expect(isStrongPassword("pekcokZaman")).toBe(true);
+test('Is PekcokZaman a strong pw', () => {
+  expect(isStrongPassword("PekcokZaman")).toBe(true);
 });
 
 test('Is one a strong pw', () => {
