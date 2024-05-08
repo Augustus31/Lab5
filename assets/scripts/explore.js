@@ -35,6 +35,7 @@ function play(event){
   let utterance = new SpeechSynthesisUtterance(textar.value);
   utterance.voice = selectedVoice;
   synth.speak(utterance);
+  let img = document.querySelector("img");
   let stopper = window.setInterval(function(){
     if(synth.speaking){
       if(img.src == "assets/images/smiling.png"){
