@@ -36,13 +36,9 @@ function play(event){
   utterance.voice = selectedVoice;
   synth.speak(utterance);
   let img = document.querySelector("img");
+  img.src = "assets/images/smiling-open.png";
   let stopper = window.setInterval(function(){
-    if(synth.speaking){
-      if(img.src == "assets/images/smiling.png"){
-        img.src = "assets/images/smiling-open.png"
-      }
-    }
-    else{
+    if(!synth.speaking){
       img.src = "assets/images/smiling.png"
       clearInterval(stopper);
     }
