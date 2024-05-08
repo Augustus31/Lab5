@@ -46,7 +46,7 @@ function play(event){
       img.src = "assets/images/smiling.png"
       clearInterval(stopper);
     }
-  }, 200);
+  }, 500);
 }
 
 function drChange(event){
